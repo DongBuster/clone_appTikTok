@@ -25,8 +25,13 @@ class _FooterAppState extends State<FooterApp> {
       child: Consumer<GlobalState>(builder: (context, globalState, child) {
         return Container(
           padding: const EdgeInsets.only(left: 15, right: 15),
-          color: _selected != index ? Colors.white : Colors.transparent,
           height: 60,
+          decoration: BoxDecoration(
+              color: _selected != index ? Colors.white : Colors.transparent,
+              border: Border(
+                  top: _selected == 0
+                      ? BorderSide.none
+                      : const BorderSide(color: Colors.black12, width: 1))),
           child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -34,8 +39,6 @@ class _FooterAppState extends State<FooterApp> {
                 //home
                 GestureDetector(
                     onTap: () {
-                      // Navigator.of(context).push(pageRouter.createPageRoute(0));
-                      // pageRouter.createPageRoute(0);
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(0);
 
@@ -73,10 +76,6 @@ class _FooterAppState extends State<FooterApp> {
                 // shop
                 GestureDetector(
                     onTap: () {
-                      // Navigator.of(context).push(pageRouter.createPageRoute(1));
-
-                      // pageRouter.createPageRoute(1);
-
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(1);
                       Future.microtask(() {
@@ -147,16 +146,13 @@ class _FooterAppState extends State<FooterApp> {
                     ),
                   ),
                 ),
+
                 // mail
                 GestureDetector(
                     onTap: () {
-                      // bool isLeftToRight =
-                      //     Provider.of<GlobalState>(context, listen: false)
-                      //         .isAnimationToLeftToRight;
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(3);
-                      // Navigator.of(context)
-                      //     .push(pageRouter.createPageRoute(3, isLeftToRight));
+
                       Future.microtask(() {
                         setState(() {
                           _selected = 3;

@@ -14,7 +14,7 @@ class SlideTransitionScreen extends StatefulWidget {
 class _SlideTransitionScreenState extends State<SlideTransitionScreen>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
-    duration: const Duration(milliseconds: 500),
+    duration: const Duration(milliseconds: 150),
     vsync: this,
   )..forward();
 

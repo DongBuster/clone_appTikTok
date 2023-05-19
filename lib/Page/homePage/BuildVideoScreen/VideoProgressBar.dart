@@ -50,7 +50,7 @@ class _VideoProgressBarState extends State<VideoProgressBar> {
     mq = MediaQuery.of(context).size;
     return Positioned(
       left: 0,
-      bottom: 64,
+      bottom: 61,
       height: 6,
       // right: 0,
       width: mq.width,

@@ -81,6 +81,9 @@ flutter:
     - assets/svg/search.svg
     - assets/svg/user.svg
     - assets/svg/home.svg
+    - assets/svg/tabmenu.svg
+    - assets/svg/liked.svg
+    - assets/svg/lock.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

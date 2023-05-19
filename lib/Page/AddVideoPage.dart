@@ -1,6 +1,4 @@
 import 'package:clone_tiktok/Animations/AnimationsPage.dart';
-import 'package:clone_tiktok/BuildApp/FooterApp.dart';
-import 'package:clone_tiktok/BuildApp/HeaderApp.dart';
 import 'package:flutter/material.dart';
 
 class AddVideo extends StatefulWidget {
@@ -23,6 +21,5 @@ class _AddVideoState extends State<AddVideo> {
         )),
       ),
     );
-    // FooterApp()
   }
 }
