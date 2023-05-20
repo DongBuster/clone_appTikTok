@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:clone_tiktok/Page/homePage/BuildVideoScreen/Buttons/Buttons.dart';
 import 'package:clone_tiktok/Page/homePage/BuildVideoScreen/Description/VideoDescription.dart';
 import 'package:clone_tiktok/Page/homePage/BuildVideoScreen/VideoProgressBar.dart';
-import 'package:clone_tiktok/CustomWidget/HeartAnimation.dart';
+import 'package:clone_tiktok/Animations/HeartAnimation.dart';
 import 'package:clone_tiktok/main.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -44,25 +44,6 @@ class _VideoState extends State<Video> {
   void initState() {
     super.initState();
     isplaying = true;
-    // widget.controller = VideoPlayerController.asset("assets/video/ok.mp4");
-    // ..initialize().then((_) {
-    //   setState(() {
-
-    //   });
-    // });
-    // controller = VideoPlayerController.network(
-    //     'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
-    // ..initialize().then((_) {
-    //   // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-    //   // setState(() {});
-    //   //
-    // });
-    // _chewieController = ChewieController(
-    //   videoPlayerController: controller,
-    //   aspectRatio: 3 / 2,
-    //   autoPlay: true,
-    //   looping: true,
-    // );
     widget.controller.play();
     widget.controller.setLooping(true);
 
@@ -71,10 +52,6 @@ class _VideoState extends State<Video> {
 
   @override
   void dispose() {
-    // Ensure disposing of the VideoPlayerwidget.Controller to free up resources.
-    // widget.controller.dispose();
-    // _chewiewidget.Controller.dispose();
-    // widget.controller = null;
     super.dispose();
   }
 
@@ -83,12 +60,6 @@ class _VideoState extends State<Video> {
     mq = MediaQuery.of(context).size;
     return Stack(
       children: [
-        // FutureBuilder(
-        //     future: _initializeVideoPlayerFuture,
-        //     builder: (context, snapshot) {
-        //       if (snapshot.connectionState == ConnectionState.done) {
-        // If the VideoPlayerwidget.Controller has finished initialization, use
-        // the data it provides to limit the aspect ratio of the video.
         SizedBox(
           width: mq.width,
           height: mq.height,
@@ -98,14 +69,6 @@ class _VideoState extends State<Video> {
             child: VideoPlayer(widget.controller),
           ),
         ),
-        //   } else {
-        //     // If the VideoPlayerController is still initializing, show a
-        //     // loading spinner.
-        //     return const Center(
-        //       child: CircularProgressIndicator(),
-        //     );
-        //   }
-        // }),
 
         // handles play, pause video ; heart animation when clicked screen
         GestureDetector(

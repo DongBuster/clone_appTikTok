@@ -1,11 +1,11 @@
 import 'package:clone_tiktok/Animations/AnimationsPage.dart';
 import 'package:clone_tiktok/BuildApp/FooterApp.dart';
-import 'package:clone_tiktok/PageRoute/pageRoute.dart';
+import 'package:clone_tiktok/Page/AllPage.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../GlobalState.dart';
+import '../provider/GlobalState.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({
@@ -27,10 +27,7 @@ class _MyAppState extends State<MyApp> {
     return Consumer<GlobalState>(
       builder: ((context, globalState, child) {
         return Stack(
-          children: [
-            pageRouter.buildScreens[globalState.indexPage],
-            FooterApp()
-          ],
+          children: [AllPage.buildScreens[globalState.indexPage], FooterApp()],
         );
       }),
     );

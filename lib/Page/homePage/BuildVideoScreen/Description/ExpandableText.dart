@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 
 class TextContentVideo extends StatefulWidget {
-  final String text;
+  String title;
+  String textDescription;
+  String nameMusic;
 
-  TextContentVideo({required this.text});
+  TextContentVideo(
+      {required this.textDescription,
+      required this.nameMusic,
+      required this.title});
 
   @override
   _TextContentVideoState createState() => _TextContentVideoState();
 }
 
 class _TextContentVideoState extends State<TextContentVideo> {
-  bool _isExpanded = false;
+  bool _isDisabled = false;
+  bool _isExpanded = true;
   final int _maxLines = 3;
   int actualLines = 0;
+
   final key = GlobalKey();
 
   @override
@@ -21,19 +27,20 @@ class _TextContentVideoState extends State<TextContentVideo> {
     return LayoutBuilder(builder: (context, constraints) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         final renderObject = key.currentContext!.findRenderObject()!;
-        final textSpan =
-            TextSpan(text: widget.text, style: const TextStyle(fontSize: 14));
+        final textSpan = TextSpan(
+            text: widget.textDescription, style: const TextStyle(fontSize: 14));
         final textPainter = TextPainter(
           text: textSpan,
           textDirection: TextDirection.ltr,
-          // maxLines: 3,
-          // overflow: ,
         );
         textPainter.layout(maxWidth: renderObject.paintBounds.width);
         actualLines = textPainter.computeLineMetrics().length;
 
-        print('Số dòng thực tế của Text là: $actualLines');
-        print('$_maxLines');
+        setState(() {
+          if (actualLines > _maxLines) _isDisabled = true;
+        });
+        // print('Số dòng thực tế của Text là: $actualLines');
+        // print('$_maxLines');
       });
 
       return SizedBox(
@@ -42,8 +49,8 @@ class _TextContentVideoState extends State<TextContentVideo> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Saleall',
-              style: TextStyle(
+              widget.title,
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
@@ -51,20 +58,21 @@ class _TextContentVideoState extends State<TextContentVideo> {
             const SizedBox(height: 10),
             Text(
               key: key,
-              widget.text,
-              maxLines: _isExpanded ? null : _maxLines,
+              widget.textDescription,
+              maxLines: _isExpanded ? _maxLines : 10,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(color: Colors.white, fontSize: 14),
             ),
-            actualLines > _maxLines
+            _isDisabled
                 ? GestureDetector(
                     onTap: () {
                       setState(() {
                         _isExpanded = !_isExpanded;
+                        print('xem them:$_isExpanded');
                       });
                     },
                     child: Text(
-                      _isExpanded ? 'Ẩn bớt' : 'Xem thêm',
+                      _isExpanded ? 'Xem thêm' : 'Ẩn bớt',
                       style: const TextStyle(color: Colors.white, fontSize: 14),
                     ),
                   )
@@ -73,8 +81,8 @@ class _TextContentVideoState extends State<TextContentVideo> {
             //
             const SizedBox(height: 5),
             Text(
-              '♫ Saleall Âm thanh Gốc',
-              style: TextStyle(
+              widget.nameMusic,
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 14,
                   fontWeight: FontWeight.w500),

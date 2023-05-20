@@ -11,7 +11,7 @@ class VideoDescription extends StatefulWidget {
 class _VideoDescriptionState extends State<VideoDescription> {
   bool _showText = false;
   String text =
-      'Một người vợ đảm đang bên China nấu ăn cho chồng. Trông thật ngon kk #China #Funny';
+      'Một người vợ đảm đang bên China nấu ăn cho chồng. Trông thật ngon kk k k k k k k k k k k test stest  #China #Funny';
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,10 @@ class _VideoDescriptionState extends State<VideoDescription> {
       bottom: 80,
       left: 10,
       child: TextContentVideo(
-        text: text,
+        title: 'Saleall',
+        textDescription:
+            'Một người vợ đảm đang bên China nấu ăn cho chồng. Trông thật ngon kk k k k k k k k k k k test stetst s etstsdt #China #Funny',
+        nameMusic: '♫ Saleall Âm thanh Gốc',
       ),
     );
   }

@@ -1,4 +1,4 @@
-import 'package:clone_tiktok/GlobalState.dart';
+import 'package:clone_tiktok/provider/GlobalState.dart';
 import 'package:clone_tiktok/PageRoute/pageRoute.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

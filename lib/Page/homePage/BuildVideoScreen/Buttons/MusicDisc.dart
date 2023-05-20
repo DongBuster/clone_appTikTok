@@ -15,8 +15,18 @@ class _MusicDiscState extends State<MusicDisc> with TickerProviderStateMixin {
   void initState() {
     _animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 10));
-    _animationController.repeat();
 
+    _animationController.repeat();
+    _animationController.addListener(() {
+      setState(() {
+        if (widget.isplaying) {
+          _animationController.forward();
+        } else {
+          _animationController.stop();
+        }
+        // initState();
+      });
+    });
     // _toggleAnimation();
     super.initState();
   }
@@ -27,20 +37,21 @@ class _MusicDiscState extends State<MusicDisc> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  void _toggleAnimation() {
-    debugPrint('${widget.isplaying}');
-    setState(() {
-      if (widget.isplaying) {
-        _animationController.forward();
+  void _updateAnimationController() {
+    if (widget.isplaying) {
+      if (_animationController.isCompleted) {
+        _animationController.repeat();
       } else {
-        _animationController.stop();
+        _animationController.forward();
       }
-      // initState();
-    });
+    } else {
+      _animationController.stop();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    _updateAnimationController();
     return RotationTransition(
       turns: Tween(begin: 0.0, end: 1.0).animate(_animationController),
       child: Container(

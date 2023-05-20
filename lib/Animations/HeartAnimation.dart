@@ -52,7 +52,7 @@ class _HeartAnimationState extends State<HeartAnimation>
                   ),
                 ),
                 AnimatedBuilder(
-                  animation: _controller.view,
+                  animation: _controller,
                   builder: (context, child) {
                     return Transform.scale(
                       scale: Tween<double>(begin: 1.0, end: 4.0)
