@@ -1,11 +1,12 @@
+import 'package:clone_tiktok/Route/App_Route.dart';
 import 'package:clone_tiktok/provider/GlobalState.dart';
-import 'package:clone_tiktok/PageRoute/pageRoute.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class FooterApp extends StatefulWidget {
-  FooterApp({super.key});
+  const FooterApp({super.key});
 
   @override
   State<FooterApp> createState() => _FooterAppState();
@@ -27,7 +28,9 @@ class _FooterAppState extends State<FooterApp> {
           padding: const EdgeInsets.only(left: 15, right: 15),
           height: 60,
           decoration: BoxDecoration(
-              color: _selected != index ? Colors.white : Colors.transparent,
+              color: AppRoute.router.location != '/home'
+                  ? Colors.white
+                  : Colors.transparent,
               border: Border(
                   top: _selected == 0
                       ? BorderSide.none
@@ -39,9 +42,12 @@ class _FooterAppState extends State<FooterApp> {
                 //home
                 GestureDetector(
                     onTap: () {
+                      print('index:.....$index');
+                      print('selected:.....$_selected');
+                      print('routeName:.....${AppRoute.router.location}');
+                      context.go('/home');
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(0);
-
                       Future.microtask(() {
                         setState(() {
                           _selected = 0;
@@ -56,13 +62,13 @@ class _FooterAppState extends State<FooterApp> {
                           SvgPicture.asset('assets/svg/home.svg',
                               width: 35,
                               height: 35,
-                              color: _selected == 0
+                              color: AppRoute.router.location == '/home'
                                   ? Colors.white
                                   : const Color(0xFF9c9c9c)),
                           Text(
                             'Home',
                             style: TextStyle(
-                              color: _selected == 0
+                              color: AppRoute.router.location == '/home'
                                   ? Colors.white
                                   : const Color(0xFF9c9c9c),
                               fontSize: 12,
@@ -76,6 +82,11 @@ class _FooterAppState extends State<FooterApp> {
                 // shop
                 GestureDetector(
                     onTap: () {
+                      print('index:.....$index');
+                      print('selected:.....$_selected');
+                      print('routeName:.....${AppRoute.router.location}');
+
+                      context.go('/shop');
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(1);
                       Future.microtask(() {
@@ -90,10 +101,10 @@ class _FooterAppState extends State<FooterApp> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
-                            _selected == 1
+                            AppRoute.router.location == '/shop'
                                 ? Icons.shopping_bag
                                 : Icons.shopping_bag_outlined,
-                            color: _selected == 1
+                            color: AppRoute.router.location == '/shop'
                                 ? Colors.black
                                 : const Color(0xFF9c9c9c),
                             size: 30,
@@ -101,7 +112,7 @@ class _FooterAppState extends State<FooterApp> {
                           Text(
                             'Shop',
                             style: TextStyle(
-                              color: _selected == 1
+                              color: AppRoute.router.location == '/shop'
                                   ? Colors.black
                                   : const Color(0xFF9c9c9c),
                               fontSize: 12,
@@ -115,10 +126,16 @@ class _FooterAppState extends State<FooterApp> {
                 // add video
                 GestureDetector(
                   onTap: () {
-                    setState(() {
-                      Provider.of<GlobalState>(context, listen: false)
-                          .setIndexPage(2);
-                    });
+                    print('index:.....$index');
+                    print('selected:.....$_selected');
+                    print('routeName:.....${AppRoute.router.location}');
+
+                    Provider.of<GlobalState>(context, listen: false)
+                        .setIndexPage(2);
+                    context.go('/addvideo');
+                    Future.microtask(() => setState(() {
+                          _selected = 2;
+                        }));
                   },
                   child: Container(
                     width: 50,
@@ -150,9 +167,11 @@ class _FooterAppState extends State<FooterApp> {
                 // mail
                 GestureDetector(
                     onTap: () {
+                      context.go('/mail');
+                      print('index:.....$index');
+                      print('selected:.....$_selected');
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(3);
-
                       Future.microtask(() {
                         setState(() {
                           _selected = 3;
@@ -168,13 +187,13 @@ class _FooterAppState extends State<FooterApp> {
                           SvgPicture.asset('assets/svg/mail.svg',
                               width: 35,
                               height: 35,
-                              color: _selected == 3
+                              color: AppRoute.router.location == '/mail'
                                   ? Colors.black
                                   : const Color(0xFF9c9c9c)),
                           Text(
                             'Hộp thư',
                             style: TextStyle(
-                                color: _selected == 3
+                                color: AppRoute.router.location == '/mail'
                                     ? Colors.black
                                     : const Color(0xFF9c9c9c),
                                 fontSize: 12,
@@ -188,9 +207,13 @@ class _FooterAppState extends State<FooterApp> {
                 // profile
                 GestureDetector(
                     onTap: () {
+                      context.go('/profile');
+
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(4);
                       Future.microtask(() {
+                        print('index:.....$index');
+                        print('selected:.....$_selected');
                         setState(() {
                           _selected = 4;
                         });
@@ -204,13 +227,13 @@ class _FooterAppState extends State<FooterApp> {
                           SvgPicture.asset('assets/svg/user.svg',
                               width: 35,
                               height: 35,
-                              color: _selected == 4
+                              color: AppRoute.router.location == '/profile'
                                   ? Colors.black
                                   : const Color(0xFF9c9c9c)),
                           Text(
                             'Hồ sơ',
                             style: TextStyle(
-                                color: _selected == 4
+                                color: AppRoute.router.location == '/profile'
                                     ? Colors.black
                                     : const Color(0xFF9c9c9c),
                                 fontSize: 12,

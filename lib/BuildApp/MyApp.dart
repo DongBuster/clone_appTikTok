@@ -1,11 +1,11 @@
-import 'package:clone_tiktok/Animations/AnimationsPage.dart';
-import 'package:clone_tiktok/BuildApp/FooterApp.dart';
-import 'package:clone_tiktok/Page/AllPage.dart';
+// import 'package:clone_tiktok/BuildApp/FooterApp.dart';
+// import 'package:clone_tiktok/Page/AllPage.dart';
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
-import '../provider/GlobalState.dart';
+// import '../provider/GlobalState.dart';
+import 'package:clone_tiktok/Route/App_Route.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({
@@ -24,12 +24,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<GlobalState>(
-      builder: ((context, globalState, child) {
-        return Stack(
-          children: [AllPage.buildScreens[globalState.indexPage], FooterApp()],
-        );
-      }),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRoute.router,
     );
   }
 }

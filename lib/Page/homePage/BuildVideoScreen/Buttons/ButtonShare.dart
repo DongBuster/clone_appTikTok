@@ -11,7 +11,7 @@ class ButtonShare extends StatelessWidget {
         child: SvgPicture.asset(height: 35, width: 35, 'assets/svg/share.svg'),
       ),
       // const SizedBox(height: 5),
-      Text(
+      const Text(
         '123',
         style: TextStyle(
             color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),

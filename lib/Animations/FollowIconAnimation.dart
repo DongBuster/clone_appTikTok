@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class FollowAnimation extends StatefulWidget {
+  const FollowAnimation({super.key});
+
   @override
   _FollowAnimationState createState() => _FollowAnimationState();
 }

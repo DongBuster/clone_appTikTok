@@ -16,7 +16,7 @@ class Buttons extends StatefulWidget {
 }
 
 class _ButtonsState extends State<Buttons> {
-  bool _isVisible = false;
+  final bool _isVisible = false;
 
   @override
   Widget build(BuildContext context) {

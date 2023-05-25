@@ -6,7 +6,7 @@ class TextContentVideo extends StatefulWidget {
   String nameMusic;
 
   TextContentVideo(
-      {required this.textDescription,
+      {super.key, required this.textDescription,
       required this.nameMusic,
       required this.title});
 

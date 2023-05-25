@@ -9,10 +9,6 @@ class VideoDescription extends StatefulWidget {
 }
 
 class _VideoDescriptionState extends State<VideoDescription> {
-  bool _showText = false;
-  String text =
-      'Một người vợ đảm đang bên China nấu ăn cho chồng. Trông thật ngon kk k k k k k k k k k k test stest  #China #Funny';
-
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -21,7 +17,7 @@ class _VideoDescriptionState extends State<VideoDescription> {
       child: TextContentVideo(
         title: 'Saleall',
         textDescription:
-            'Một người vợ đảm đang bên China nấu ăn cho chồng. Trông thật ngon kk k k k k k k k k k k test stetst s etstsdt #China #Funny',
+            'Một người vợ đảm đang bên China nấu ăn cho chồng. Trông thật ngon kk kk k k k k k kk  kkkkk  kk  kk #China #Funny',
         nameMusic: '♫ Saleall Âm thanh Gốc',
       ),
     );

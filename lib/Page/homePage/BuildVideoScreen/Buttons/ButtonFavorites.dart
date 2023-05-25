@@ -33,7 +33,7 @@ class ButtonFavorites extends StatelessWidget {
         },
       ),
       // const SizedBox(height: 5),
-      Text(
+      const Text(
         '1M',
         style: TextStyle(
             color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),

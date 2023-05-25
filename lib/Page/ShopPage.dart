@@ -1,5 +1,4 @@
 import 'package:clone_tiktok/Animations/AnimationsPage.dart';
-import 'package:clone_tiktok/BuildApp/FooterApp.dart';
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatefulWidget {
@@ -15,7 +14,7 @@ class _ShopPageState extends State<ShopPage> {
     return SlideTransitionScreen(
       child: Container(
         color: Colors.white,
-        child: Center(
+        child: const Center(
             child: Text(
           'hello',
           style: TextStyle(fontSize: 18, color: Colors.amber),

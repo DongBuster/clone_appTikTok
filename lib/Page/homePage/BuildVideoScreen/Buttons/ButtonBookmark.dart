@@ -23,7 +23,7 @@ class ButtonBookmark extends StatelessWidget {
               size: 30,
             );
           }),
-      Text(
+      const Text(
         '929',
         style: TextStyle(
             color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),

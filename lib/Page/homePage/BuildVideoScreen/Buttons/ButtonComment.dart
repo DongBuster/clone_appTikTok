@@ -21,7 +21,7 @@ class _ButtonCommentState extends State<ButtonComment> {
         ),
       ),
       const SizedBox(height: 5),
-      Text(
+      const Text(
         '1,2K',
         style: TextStyle(
             color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),

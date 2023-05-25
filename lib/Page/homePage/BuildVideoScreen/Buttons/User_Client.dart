@@ -21,7 +21,7 @@ class UserClient extends StatelessWidget {
                     image: AssetImage('assets/img/girl.jpg'),
                     fit: BoxFit.cover)),
           ),
-          Positioned(
+          const Positioned(
             bottom: 0,
             right: 22,
             child: Center(
