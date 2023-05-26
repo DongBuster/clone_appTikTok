@@ -12,14 +12,19 @@ class _AddVideoState extends State<AddVideo> {
   @override
   Widget build(BuildContext context) {
     return SlideTransitionScreen(
-      child: Container(
-        color: Colors.green,
-        child: Center(
-            child: Text(
-          'hello',
-          style: TextStyle(fontSize: 18, color: Colors.amber),
-        )),
-      ),
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Container(
+          color: Colors.white,
+          child: Center(
+              child: Text(
+            'Tính năng đang phát triển',
+            style: TextStyle(fontSize: 18, color: Colors.blue),
+          )),
+        ),
+        const SizedBox(
+          height: 62,
+        )
+      ]),
     );
   }
 }

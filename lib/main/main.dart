@@ -2,7 +2,6 @@ import 'package:clone_tiktok/BuildApp/MyApp.dart';
 import 'package:clone_tiktok/provider/GlobalState.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'package:google_fonts/google_fonts.dart';
 
 late Size mq;
 void main() async {

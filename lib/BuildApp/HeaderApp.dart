@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../main.dart';
+import '../main/main.dart';
 
 class HeaderApp extends StatefulWidget {
   const HeaderApp({super.key});

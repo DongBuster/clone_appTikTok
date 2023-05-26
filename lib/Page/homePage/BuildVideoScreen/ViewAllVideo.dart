@@ -1,5 +1,5 @@
 import 'package:clone_tiktok/Page/homePage/BuildVideoScreen/VideoScreen.dart';
-import 'package:clone_tiktok/main.dart';
+import 'package:clone_tiktok/main/main.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 

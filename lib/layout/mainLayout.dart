@@ -14,6 +14,7 @@ class _MainLayoutState extends State<MainLayout> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Stack(
           children: [widget.child, const FooterApp()],
         ),

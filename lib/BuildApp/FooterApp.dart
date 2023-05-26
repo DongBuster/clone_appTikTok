@@ -42,9 +42,6 @@ class _FooterAppState extends State<FooterApp> {
                 //home
                 GestureDetector(
                     onTap: () {
-                      print('index:.....$index');
-                      print('selected:.....$_selected');
-                      print('routeName:.....${AppRoute.router.location}');
                       context.go('/home');
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(0);
@@ -82,10 +79,6 @@ class _FooterAppState extends State<FooterApp> {
                 // shop
                 GestureDetector(
                     onTap: () {
-                      print('index:.....$index');
-                      print('selected:.....$_selected');
-                      print('routeName:.....${AppRoute.router.location}');
-
                       context.go('/shop');
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(1);
@@ -126,10 +119,6 @@ class _FooterAppState extends State<FooterApp> {
                 // add video
                 GestureDetector(
                   onTap: () {
-                    print('index:.....$index');
-                    print('selected:.....$_selected');
-                    print('routeName:.....${AppRoute.router.location}');
-
                     Provider.of<GlobalState>(context, listen: false)
                         .setIndexPage(2);
                     context.go('/addvideo');
@@ -151,12 +140,16 @@ class _FooterAppState extends State<FooterApp> {
                         width: 40,
                         height: 30,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: AppRoute.router.location == '/home'
+                              ? Colors.white
+                              : Colors.black,
                           borderRadius: BorderRadius.circular(7),
                         ),
-                        child: const Icon(
+                        child: Icon(
                           Icons.add,
-                          color: Colors.black,
+                          color: AppRoute.router.location == '/home'
+                              ? Colors.black
+                              : Colors.white,
                           size: 22,
                         ),
                       ),
@@ -168,8 +161,7 @@ class _FooterAppState extends State<FooterApp> {
                 GestureDetector(
                     onTap: () {
                       context.go('/mail');
-                      print('index:.....$index');
-                      print('selected:.....$_selected');
+
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(3);
                       Future.microtask(() {
