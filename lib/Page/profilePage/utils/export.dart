@@ -1,7 +1,7 @@
 export 'package:clone_tiktok/Animations/AnimationsPage.dart';
 export 'package:clone_tiktok/Page/profilePage/activity_user.dart';
 export 'package:clone_tiktok/Page/profilePage/add_bio.dart';
-export 'package:clone_tiktok/Page/profilePage/feature1.dart';
+export 'package:clone_tiktok/Page/profilePage/feature1/feature1.dart';
 export 'package:clone_tiktok/Page/profilePage/feature2/detail_feature2.dart';
 export 'package:clone_tiktok/Page/profilePage/feature2/feature2.dart';
 export 'package:clone_tiktok/Page/profilePage/header_profile.dart';

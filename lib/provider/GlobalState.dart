@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class GlobalState extends ChangeNotifier {
+  // handle login
+
+  //handle AnimationPage
   int indexPage = 0;
   bool isAnimationToLeftToRight = false;
 

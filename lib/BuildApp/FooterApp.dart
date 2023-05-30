@@ -17,8 +17,6 @@ class _FooterAppState extends State<FooterApp> {
 
   @override
   Widget build(BuildContext context) {
-    int index = Provider.of<GlobalState>(context, listen: false).indexPage;
-
     return Positioned(
       bottom: 0,
       left: 0,
@@ -45,11 +43,6 @@ class _FooterAppState extends State<FooterApp> {
                       context.go('/home');
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(0);
-                      Future.microtask(() {
-                        setState(() {
-                          _selected = 0;
-                        });
-                      });
                     },
                     child: SizedBox(
                       width: 50,
@@ -61,13 +54,17 @@ class _FooterAppState extends State<FooterApp> {
                               height: 35,
                               color: AppRoute.router.location == '/home'
                                   ? Colors.white
-                                  : const Color(0xFF9c9c9c)),
+                                  : AppRoute.router.location == '/home'
+                                      ? const Color(0xFFf0e9e5)
+                                      : const Color(0xFF9c9c9c)),
                           Text(
                             'Home',
                             style: TextStyle(
                               color: AppRoute.router.location == '/home'
                                   ? Colors.white
-                                  : const Color(0xFF9c9c9c),
+                                  : AppRoute.router.location == '/home'
+                                      ? const Color(0xFFf0e9e5)
+                                      : const Color(0xFF9c9c9c),
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                               decoration: TextDecoration.none,
@@ -82,11 +79,6 @@ class _FooterAppState extends State<FooterApp> {
                       context.go('/shop');
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(1);
-                      Future.microtask(() {
-                        setState(() {
-                          _selected = 1;
-                        });
-                      });
                     },
                     child: SizedBox(
                       width: 50,
@@ -99,7 +91,9 @@ class _FooterAppState extends State<FooterApp> {
                                 : Icons.shopping_bag_outlined,
                             color: AppRoute.router.location == '/shop'
                                 ? Colors.black
-                                : const Color(0xFF9c9c9c),
+                                : AppRoute.router.location == '/home'
+                                    ? const Color(0xFFf0e9e5)
+                                    : const Color(0xFF9c9c9c),
                             size: 30,
                           ),
                           Text(
@@ -107,7 +101,9 @@ class _FooterAppState extends State<FooterApp> {
                             style: TextStyle(
                               color: AppRoute.router.location == '/shop'
                                   ? Colors.black
-                                  : const Color(0xFF9c9c9c),
+                                  : AppRoute.router.location == '/home'
+                                      ? const Color(0xFFf0e9e5)
+                                      : const Color(0xFF9c9c9c),
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                               decoration: TextDecoration.none,
@@ -122,9 +118,6 @@ class _FooterAppState extends State<FooterApp> {
                     Provider.of<GlobalState>(context, listen: false)
                         .setIndexPage(2);
                     context.go('/addvideo');
-                    Future.microtask(() => setState(() {
-                          _selected = 2;
-                        }));
                   },
                   child: Container(
                     width: 50,
@@ -164,11 +157,6 @@ class _FooterAppState extends State<FooterApp> {
 
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(3);
-                      Future.microtask(() {
-                        setState(() {
-                          _selected = 3;
-                        });
-                      });
                     },
                     child: SizedBox(
                       width: 50,
@@ -181,13 +169,17 @@ class _FooterAppState extends State<FooterApp> {
                               height: 35,
                               color: AppRoute.router.location == '/mail'
                                   ? Colors.black
-                                  : const Color(0xFF9c9c9c)),
+                                  : AppRoute.router.location == '/home'
+                                      ? const Color(0xFFf0e9e5)
+                                      : const Color(0xFF9c9c9c)),
                           Text(
                             'Hộp thư',
                             style: TextStyle(
                                 color: AppRoute.router.location == '/mail'
                                     ? Colors.black
-                                    : const Color(0xFF9c9c9c),
+                                    : AppRoute.router.location == '/home'
+                                        ? const Color(0xFFf0e9e5)
+                                        : const Color(0xFF9c9c9c),
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
                                 decoration: TextDecoration.none,
@@ -203,13 +195,6 @@ class _FooterAppState extends State<FooterApp> {
 
                       Provider.of<GlobalState>(context, listen: false)
                           .setIndexPage(4);
-                      Future.microtask(() {
-                        print('index:.....$index');
-                        print('selected:.....$_selected');
-                        setState(() {
-                          _selected = 4;
-                        });
-                      });
                     },
                     child: SizedBox(
                       width: 50,
@@ -221,13 +206,17 @@ class _FooterAppState extends State<FooterApp> {
                               height: 35,
                               color: AppRoute.router.location == '/profile'
                                   ? Colors.black
-                                  : const Color(0xFF9c9c9c)),
+                                  : AppRoute.router.location == '/home'
+                                      ? const Color(0xFFf0e9e5)
+                                      : const Color(0xFF9c9c9c)),
                           Text(
                             'Hồ sơ',
                             style: TextStyle(
                                 color: AppRoute.router.location == '/profile'
                                     ? Colors.black
-                                    : const Color(0xFF9c9c9c),
+                                    : AppRoute.router.location == '/home'
+                                        ? const Color(0xFFf0e9e5)
+                                        : const Color(0xFF9c9c9c),
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
                                 decoration: TextDecoration.none,

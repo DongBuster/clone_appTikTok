@@ -8,9 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class Video extends StatefulWidget {
+  VideoPlayerController controller;
   Video({super.key, required this.controller});
-  late VideoPlayerController controller =
-      VideoPlayerController.asset("assets/video/ok.mp4");
 
   //  = VideoPlayerController.network(
   //     'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4');
@@ -21,18 +20,19 @@ class Video extends StatefulWidget {
 }
 
 class _VideoState extends State<Video> {
-  late Future<void> _initializeVideoPlayerFuture;
+  // late Future<void> _initializeVideoPlayerFuture;
 
   bool favorited = false;
   bool favorited_double = false;
+  //
   bool isTilted = false;
-  late bool isplaying;
-
+  bool isplaying = true;
+  //
   final List<Widget> _listIconHeart = [];
+  //
   final keyText = GlobalKey();
 
   Offset? _tapPosition;
-
   void _getTapPosition(TapDownDetails details) async {
     final tapPosition = details.globalPosition;
     setState(() {
@@ -43,16 +43,8 @@ class _VideoState extends State<Video> {
   @override
   void initState() {
     super.initState();
-    isplaying = true;
     widget.controller.play();
     widget.controller.setLooping(true);
-
-    _initializeVideoPlayerFuture = widget.controller.initialize();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 
   @override
@@ -126,9 +118,7 @@ class _VideoState extends State<Video> {
 
         Buttons(favorited: favorited, isplaying: isplaying),
         // video progress bar
-        VideoProgressBar(
-          controller: widget.controller,
-        ),
+        VideoProgressBar(controller: widget.controller),
         const VideoDescription()
       ],
     );

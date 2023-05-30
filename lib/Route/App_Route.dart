@@ -1,3 +1,4 @@
+import 'package:clone_tiktok/Page/login/login_screen.dart';
 import 'package:clone_tiktok/layout/mainLayout.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -11,12 +12,16 @@ final GlobalKey<NavigatorState> _shellNavigator =
 class AppRoute {
   static final GoRouter router = GoRouter(
     navigatorKey: _rootNavigator,
-    initialLocation: '/home',
+    initialLocation: '/login',
     routes: [
       GoRoute(
           path: '/home',
           name: 'root',
           builder: (context, state) => const MainLayout(child: HomePage())),
+      GoRoute(
+          path: '/login',
+          name: 'loginScreen',
+          builder: (context, state) => const loginScreen()),
       ShellRoute(
           navigatorKey: _shellNavigator,
           builder: (context, state, child) => MainLayout(child: child),
@@ -34,7 +39,7 @@ class AppRoute {
               name: 'ShopScreen',
               pageBuilder: (context, state) {
                 return const NoTransitionPage(
-                    child: MainLayout(child: ShopPage()));
+                    child: MainLayout(child: loginScreen()));
               },
             ),
             GoRoute(
