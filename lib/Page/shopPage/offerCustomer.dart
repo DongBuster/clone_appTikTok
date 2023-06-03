@@ -56,7 +56,7 @@ class _offerCustomerState extends State<offerCustomer> {
                       decoration: BoxDecoration(
                           color: Colors.redAccent,
                           borderRadius: BorderRadius.circular(3)),
-                      child: Text(
+                      child: const Text(
                         'Lương Về',
                         style: TextStyle(
                             fontSize: 12,
@@ -134,15 +134,15 @@ Widget saleBanner(String url) {
           ),
         ),
         const SizedBox(height: 8),
-        Padding(
-            padding: const EdgeInsets.only(left: 10),
+        const Padding(
+            padding: EdgeInsets.only(left: 10),
             child: Text('25.000đ',
                 style: TextStyle(
                     fontSize: 15,
                     color: Colors.black,
                     fontWeight: FontWeight.bold))),
-        Padding(
-            padding: const EdgeInsets.only(left: 10),
+        const Padding(
+            padding: EdgeInsets.only(left: 10),
             child: Text('50.000đ',
                 style: TextStyle(
                     fontSize: 15,

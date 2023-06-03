@@ -1,11 +1,16 @@
 import 'package:clone_tiktok/BuildApp/MyApp.dart';
+import 'package:clone_tiktok/Page/login/firebase_options.dart';
 import 'package:clone_tiktok/provider/GlobalState.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 late Size mq;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     ChangeNotifierProvider(
       create: (context) => GlobalState(),
@@ -13,13 +18,3 @@ void main() async {
     ),
   );
 }
-
-// ThemeData _buildTheme(brightness) {
-//   var baseTheme = ThemeData(brightness: brightness);
-
-//   return baseTheme.copyWith(
-//     textTheme: GoogleFonts.ralewayTextTheme(baseTheme.textTheme).copyWith(
-
-//         )
-//   );
-// }

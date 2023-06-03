@@ -55,13 +55,13 @@ class _flashSaleState extends State<flashSale> {
                         // color: Colors.black,
                         borderRadius: BorderRadius.circular(5)),
                     child: TimerCountdown(
-                      colonsTextStyle: TextStyle(color: Colors.red),
+                      colonsTextStyle: const TextStyle(color: Colors.red),
                       format: CountDownTimerFormat.hoursMinutesSeconds,
                       enableDescriptions: false,
                       timeTextStyle:
-                          TextStyle(color: Colors.black, fontSize: 12),
+                          const TextStyle(color: Colors.black, fontSize: 12),
                       endTime: DateTime.now().add(
-                        Duration(hours: 14, minutes: 30, seconds: 50),
+                        const Duration(hours: 14, minutes: 30, seconds: 50),
                       ),
                     ),
                   ),

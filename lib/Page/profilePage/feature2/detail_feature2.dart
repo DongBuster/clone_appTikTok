@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class detailFeature2 extends StatefulWidget {
   final TabController tabController;
-  detailFeature2({super.key, required this.tabController});
+  const detailFeature2({super.key, required this.tabController});
 
   @override
   State<detailFeature2> createState() => _detailFeature2State();

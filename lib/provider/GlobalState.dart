@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 class GlobalState extends ChangeNotifier {
   // handle login
+  bool isLogin = false;
+  void setIsLogin(bool value) {
+    isLogin = value;
+    notifyListeners();
+  }
 
   //handle AnimationPage
   int indexPage = 0;

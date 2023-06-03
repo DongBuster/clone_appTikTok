@@ -12,7 +12,7 @@ class VideoProgressBar extends StatefulWidget {
 }
 
 class _VideoProgressBarState extends State<VideoProgressBar> {
-  double _currentSliderValue = 0.0;
+  final double _currentSliderValue = 0.0;
 
   @override
   void initState() {

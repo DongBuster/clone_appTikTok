@@ -41,8 +41,8 @@ class _InboxMessageState extends State<InboxMessage> {
             ),
           ),
           title: Text(widget.title,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-          subtitle: Text(widget.subtitle, style: TextStyle(fontSize: 14)),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+          subtitle: Text(widget.subtitle, style: const TextStyle(fontSize: 14)),
           trailing: widget.quantity != 0
               ? Container(
                   alignment: Alignment.center,
@@ -52,7 +52,7 @@ class _InboxMessageState extends State<InboxMessage> {
                       color: Colors.redAccent,
                       borderRadius: BorderRadius.circular(10)),
                   child: Text("${widget.quantity}",
-                      style: TextStyle(color: Colors.white, fontSize: 12)),
+                      style: const TextStyle(color: Colors.white, fontSize: 12)),
                 )
               : badges.Badge(
                   position: badges.BadgePosition.center(),

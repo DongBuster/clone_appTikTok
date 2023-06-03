@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class headerShop extends StatefulWidget {
   String searchSuggestions;
@@ -53,7 +52,7 @@ class _headerShopState extends State<headerShop> {
           ),
           const Row(
             children: [
-              const SizedBox(width: 5),
+              SizedBox(width: 5),
               SizedBox(
                   width: 35,
                   child: IconButton(

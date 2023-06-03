@@ -37,6 +37,12 @@ class _ViewAllVideoState extends State<ViewAllVideo> {
   }
 
   @override
+  void dispose() {
+    // videoControllers.map((e) => e.dispose());
+    super.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
     loadVideoControllers();

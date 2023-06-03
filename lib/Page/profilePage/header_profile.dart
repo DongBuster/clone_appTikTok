@@ -1,5 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:clone_tiktok/provider/GlobalState.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+import 'package:clone_tiktok/Page/login/loginWithGoogle.dart';
 
 class headerProfile extends StatefulWidget {
   String nickname;
@@ -54,9 +58,55 @@ class _headerProfileState extends State<headerProfile> {
                 child: Image.asset('assets/img/footprints.png',
                     width: 25, height: 20),
               ),
-              const IconButton(
-                onPressed: null,
-                icon: Icon(
+              IconButton(
+                onPressed: () {
+                  showMenu(
+                    context: context,
+                    position: RelativeRect.fromLTRB(
+                      MediaQuery.of(context).size.width,
+                      40.0,
+                      0.0,
+                      0.0,
+                    ),
+                    items: [
+                      PopupMenuItem(
+                          onTap: () async {
+                            await loginWithGoogle.logoutWithGoogle();
+                            // if (mounted) {
+                            setState(() {
+                              Provider.of<GlobalState>(context, listen: false)
+                                  .setIsLogin(false);
+                            });
+                            // Navigator.pop(context);
+
+                            context.go('/login');
+                            print(
+                                'islogin: ${Provider.of<GlobalState>(context, listen: false).isLogin}');
+                            // } else {
+                            //   ScaffoldMessenger.of(context).showSnackBar(
+                            //     const SnackBar(
+                            //       content: Text('Logout failed'),
+                            //     ),
+                            //   );
+                            //   // }
+                          },
+                          height: 20,
+                          value: 'logout',
+                          child: TextButton.icon(
+                              onPressed: null,
+                              icon: const Icon(
+                                Icons.logout,
+                                color: Colors.red,
+                              ),
+                              label: const Text(
+                                'Logout',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.black),
+                              ))),
+                    ],
+                  );
+                },
+                icon: const Icon(
                   Icons.menu_sharp,
                   color: Colors.black,
                 ),
@@ -68,4 +118,32 @@ class _headerProfileState extends State<headerProfile> {
       ),
     );
   }
+}
+
+class detailMenu extends StatefulWidget {
+  const detailMenu({super.key});
+
+  @override
+  State<detailMenu> createState() => _detailMenuState();
+}
+
+class _detailMenuState extends State<detailMenu> {
+  @override
+  Widget build(BuildContext context) {
+    return drawerMenu();
+  }
+}
+
+Widget drawerMenu() {
+  return const Drawer(
+    width: 100,
+    child: Column(
+      children: [
+        ListTile(
+          leading: Icon(Icons.logout_rounded, size: 25),
+          title: Text('Logout'),
+        )
+      ],
+    ),
+  );
 }

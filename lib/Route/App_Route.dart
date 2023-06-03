@@ -2,7 +2,6 @@ import 'package:clone_tiktok/Page/login/login_screen.dart';
 import 'package:clone_tiktok/layout/mainLayout.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import 'package:clone_tiktok/Page/utils/exportPage.dart';
 
 final GlobalKey<NavigatorState> _rootNavigator = GlobalKey(debugLabel: 'root');
@@ -12,16 +11,18 @@ final GlobalKey<NavigatorState> _shellNavigator =
 class AppRoute {
   static final GoRouter router = GoRouter(
     navigatorKey: _rootNavigator,
-    initialLocation: '/login',
+    initialLocation: '/home',
+    // refreshListenable: ,
     routes: [
       GoRoute(
           path: '/home',
           name: 'root',
           builder: (context, state) => const MainLayout(child: HomePage())),
       GoRoute(
-          path: '/login',
-          name: 'loginScreen',
-          builder: (context, state) => const loginScreen()),
+        path: '/login',
+        name: 'loginScreen',
+        builder: (context, state) => const MainLayout(child: loginScreen()),
+      ),
       ShellRoute(
           navigatorKey: _shellNavigator,
           builder: (context, state, child) => MainLayout(child: child),
@@ -39,7 +40,7 @@ class AppRoute {
               name: 'ShopScreen',
               pageBuilder: (context, state) {
                 return const NoTransitionPage(
-                    child: MainLayout(child: loginScreen()));
+                    child: MainLayout(child: ShopPage()));
               },
             ),
             GoRoute(
@@ -63,7 +64,8 @@ class AppRoute {
               name: 'profileScreen',
               pageBuilder: (context, state) {
                 return const NoTransitionPage(
-                    child: MainLayout(child: ProfilePage()));
+                  child: MainLayout(child: ProfilePage()),
+                );
               },
             ),
           ])
@@ -71,7 +73,7 @@ class AppRoute {
     errorBuilder: (context, state) {
       return Container(
         alignment: Alignment.center,
-        child: Text('error route'),
+        child: const Text('error route'),
       );
     },
   );

@@ -13,7 +13,7 @@ class FooterApp extends StatefulWidget {
 }
 
 class _FooterAppState extends State<FooterApp> {
-  int _selected = 0;
+  final int _selected = 0;
 
   @override
   Widget build(BuildContext context) {

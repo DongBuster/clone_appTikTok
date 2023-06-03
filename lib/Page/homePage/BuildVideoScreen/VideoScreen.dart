@@ -3,6 +3,7 @@ import 'package:clone_tiktok/Page/homePage/BuildVideoScreen/Buttons/Buttons.dart
 import 'package:clone_tiktok/Page/homePage/BuildVideoScreen/Description/VideoDescription.dart';
 import 'package:clone_tiktok/Page/homePage/BuildVideoScreen/VideoProgressBar.dart';
 import 'package:clone_tiktok/Animations/HeartAnimation.dart';
+import 'package:clone_tiktok/Route/App_Route.dart';
 import 'package:clone_tiktok/main/main.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -38,6 +39,12 @@ class _VideoState extends State<Video> {
     setState(() {
       _tapPosition = tapPosition;
     });
+  }
+
+  @override
+  void dispose() {
+    AppRoute.router.location != '/home' ? widget.controller.dispose() : null;
+    super.dispose();
   }
 
   @override

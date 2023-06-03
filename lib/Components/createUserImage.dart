@@ -44,7 +44,7 @@ class _MailImageUserState extends State<MailImageUser> {
             constraints: const BoxConstraints(maxWidth: 90),
             child: Text(
               widget.name,
-              style: TextStyle(fontSize: 14, overflow: TextOverflow.ellipsis),
+              style: const TextStyle(fontSize: 14, overflow: TextOverflow.ellipsis),
             ),
           )
         ],

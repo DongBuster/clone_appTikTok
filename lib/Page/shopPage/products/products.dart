@@ -36,7 +36,7 @@ class _roductsCaterogyState extends State<roductsCaterogy> {
               margin: const EdgeInsets.only(bottom: 10),
               width: 200,
               height: 200,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(5),
                       topRight: Radius.circular(5)),
@@ -49,11 +49,11 @@ class _roductsCaterogyState extends State<roductsCaterogy> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Tai nghe Bluetooth M10 Phiên bản Pro nâng cấp',
+                    const Text('Tai nghe Bluetooth M10 Phiên bản Pro nâng cấp',
                         style: TextStyle(color: Colors.black87, fontSize: 16)),
                     Row(
                       children: [
-                        Text('98.000đ',
+                        const Text('98.000đ',
                             style: TextStyle(
                                 color: Colors.redAccent, fontSize: 20)),
                         const SizedBox(width: 5),
@@ -78,7 +78,7 @@ class _roductsCaterogyState extends State<roductsCaterogy> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(3),
                           border: Border.all(
-                              color: Color.fromARGB(255, 243, 140, 140))),
+                              color: const Color.fromARGB(255, 243, 140, 140))),
                       child: Text('COD',
                           style:
                               TextStyle(color: Colors.red[400], fontSize: 12)),
@@ -86,16 +86,16 @@ class _roductsCaterogyState extends State<roductsCaterogy> {
                     const SizedBox(height: 5),
                     Row(
                       children: [
-                        Icon(Icons.star, color: Colors.yellow, size: 15),
-                        Text('4.6',
+                        const Icon(Icons.star, color: Colors.yellow, size: 15),
+                        const Text('4.6',
                             style:
                                 TextStyle(fontSize: 14, color: Colors.black87)),
                         Container(
                             margin: const EdgeInsets.only(left: 3, right: 3),
                             width: 1,
                             height: 8,
-                            color: Color(0xff9c9c9c)),
-                        Text('Đã bán 39.9k',
+                            color: const Color(0xff9c9c9c)),
+                        const Text('Đã bán 39.9k',
                             style:
                                 TextStyle(fontSize: 14, color: Colors.black87)),
                       ],
@@ -117,7 +117,7 @@ class MyDelegate extends SliverPersistentHeaderDelegate {
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      color: Color(0xfff1f1f1),
+      color: const Color(0xfff1f1f1),
       child: tabBar,
     );
   }

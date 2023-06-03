@@ -25,7 +25,7 @@ class _HeartAnimationState extends State<HeartAnimation>
   void initState() {
     super.initState();
     _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+        AnimationController(vsync: this, duration: const Duration(milliseconds: 500));
     _controller.forward();
   }
 

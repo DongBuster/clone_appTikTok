@@ -111,7 +111,7 @@ class _ShopPageState extends State<ShopPage>
                           },
                           body: TabBarView(
                             children: [1, 2, 3, 4, 5]
-                                .map((tab) => roductsCaterogy())
+                                .map((tab) => const roductsCaterogy())
                                 .toList(),
                           ),
                         ),
@@ -121,7 +121,7 @@ class _ShopPageState extends State<ShopPage>
                     right: 0,
                     child: Opacity(
                         opacity: isScrolling ? 0.5 : 1,
-                        child: Container(
+                        child: const SizedBox(
                           width: 50,
                           height: 50,
                           // color: Colors.green,

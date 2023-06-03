@@ -15,7 +15,7 @@ class _AddVideoState extends State<AddVideo> {
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Container(
           color: Colors.white,
-          child: Center(
+          child: const Center(
               child: Text(
             'Tính năng đang phát triển',
             style: TextStyle(fontSize: 18, color: Colors.blue),

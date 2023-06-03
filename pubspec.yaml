@@ -45,6 +45,10 @@ dependencies:
   badges: ^3.1.1
   go_router: ^7.1.1
   flutter_timer_countdown: ^1.0.5
+  modal_bottom_sheet: ^2.1.2
+  google_sign_in: ^6.1.3
+  firebase_core: ^2.13.1
+  firebase_auth: ^4.6.2
 
 dev_dependencies:
   flutter_test:
@@ -84,14 +88,23 @@ flutter:
     - assets/svg/mail.svg
     - assets/svg/search.svg
     - assets/svg/user.svg
+    - assets/svg/register_user.svg
     - assets/svg/home.svg
     - assets/svg/tabmenu.svg
     - assets/svg/liked.svg
     - assets/svg/lock.svg
+    - assets/svg/question.svg
     - assets/img/saleTag.jpg
     - assets/img/ip.jpg
     - assets/img/airpod.png
     - assets/img/m10pro.jpg
+    ## login
+    - assets/img/login/googleLogo.png
+    - assets/img/login/facebookLogo.png
+    - assets/img/login/intargramLogo.png
+    - assets/img/login/lineLogo.png
+    - assets/img/login/personLogo.png
+    - assets/img/login/twitterLogo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
