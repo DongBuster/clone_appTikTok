@@ -1,5 +1,5 @@
 import 'package:clone_tiktok/BuildApp/MyApp.dart';
-import 'package:clone_tiktok/Page/login/firebase_options.dart';
+import 'package:clone_tiktok/Page/loginPage/firebase_options.dart';
 import 'package:clone_tiktok/provider/GlobalState.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

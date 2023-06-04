@@ -3,7 +3,7 @@ import 'package:clone_tiktok/provider/GlobalState.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:clone_tiktok/Page/login/loginWithGoogle.dart';
+import 'package:clone_tiktok/Page/loginPage/loginWithGoogle.dart';
 
 class headerProfile extends StatefulWidget {
   String nickname;

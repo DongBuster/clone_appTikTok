@@ -1,4 +1,4 @@
-import 'package:clone_tiktok/Page/login/loginWithGoogle.dart';
+import 'package:clone_tiktok/Page/loginPage/loginWithGoogle.dart';
 import 'package:clone_tiktok/Route/App_Route.dart';
 import 'package:clone_tiktok/provider/GlobalState.dart';
 import 'package:flutter/material.dart';

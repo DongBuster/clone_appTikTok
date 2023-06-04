@@ -1,8 +1,8 @@
-import 'package:clone_tiktok/Page/login/login_screen.dart';
+import 'package:clone_tiktok/Page/loginPage/login_screen.dart';
 import 'package:clone_tiktok/layout/mainLayout.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:clone_tiktok/Page/utils/exportPage.dart';
+import 'package:clone_tiktok/utils/export.dart';
 
 final GlobalKey<NavigatorState> _rootNavigator = GlobalKey(debugLabel: 'root');
 final GlobalKey<NavigatorState> _shellNavigator =

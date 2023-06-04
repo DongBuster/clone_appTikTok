@@ -1,7 +1,7 @@
 import 'package:clone_tiktok/Animations/AnimationsPage.dart';
 import 'package:clone_tiktok/Components/InboxMessage.dart';
 import 'package:clone_tiktok/Components/createUserImage.dart';
-import 'package:clone_tiktok/Page/login/login_screen.dart';
+import 'package:clone_tiktok/Page/loginPage/login_screen.dart';
 import 'package:clone_tiktok/provider/GlobalState.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

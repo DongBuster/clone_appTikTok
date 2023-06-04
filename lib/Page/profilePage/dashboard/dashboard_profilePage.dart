@@ -1,4 +1,4 @@
-import 'package:clone_tiktok/Page/profilePage/utils/export.dart';
+import 'package:clone_tiktok/utils/export.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
